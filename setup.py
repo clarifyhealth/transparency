@@ -1,6 +1,6 @@
 from os import path, getcwd
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 package_name = 'transparency'
 
@@ -27,8 +27,12 @@ setup(name=package_name,
       author='Iman Haji & Alvin Henrick',
       author_email='iman.bio@gmail.com,share.code@aol.com',
       url='https://github.com/imanbio/transparency',
-      packages=find_packages(exclude=['tests']),
+      packages=['transparency'],
       install_requires=requirements,
       tests_require=test_requirements,
       include_package_data=True,
+      classifiers=[
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.6',
+      ],
       zip_safe=False)
