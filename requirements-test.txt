@@ -1,3 +1,5 @@
+py4j==0.10.7
+pyspark==2.4.5
 pytest>=5.3.2
 pytest-html>=2.0.1
 matplotlib>=3.2.2
