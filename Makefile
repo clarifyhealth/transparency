@@ -5,3 +5,7 @@ package:
 .PHONY: publish
 publish:
 	twine upload dist/*
+
+.PHONY: testpublish
+testpublish:
+	twine upload --repository testpypi dist/*
