@@ -1,5 +1,12 @@
+.PHONY: clean
+clean:
+	rm -fr ./build
+	rm -fr ./dist
+	rm -fr *.pyc
+	rm -fr ./*.egg-info
+
 .PHONY: package
-package:
+package: clean
 	python setup.py sdist
 
 .PHONY: publish

@@ -1,5 +1,8 @@
+import shutil
+import os
+import glob
 from os import path, getcwd
-
+from distutils.cmd import Command
 from setuptools import setup
 
 package_name = 'transparency'
