@@ -1,8 +1,4 @@
-import shutil
-import os
-import glob
 from os import path, getcwd
-from distutils.cmd import Command
 from setuptools import setup
 
 package_name = 'transparency'
@@ -25,7 +21,7 @@ test_requirements = parse_requirements('requirements-test.txt')
 
 setup(name=package_name,
       version=version,
-      license='',
+      license='Apache License 2.0',
       description='Project to explain models',
       author='Iman Haji & Alvin Henrick',
       author_email='iman.bio@gmail.com,share.code@aol.com',
