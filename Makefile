@@ -1,5 +1,5 @@
-.PHONY: build
-build:
+.PHONY: package
+package:
 	python setup.py sdist
 
 .PHONY: publish
