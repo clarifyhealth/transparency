@@ -9,7 +9,7 @@ from pyspark.ml.wrapper import JavaTransformer
 class GLMExplainTransformer(JavaTransformer, DefaultParamsReadable,
                             DefaultParamsWritable):
     """
-    GLMExplainTransformer Custom Scala / Python Wrapper Test
+    GLMExplainTransformer Custom Scala / Python Wrapper
     """
 
     _classpath = 'com.clarify.prediction.explainer.GLMExplainTransformer'

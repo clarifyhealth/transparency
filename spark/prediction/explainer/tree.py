@@ -9,7 +9,7 @@ from pyspark.ml.wrapper import JavaTransformer
 class EnsembleTreeExplainTransformer(JavaTransformer, DefaultParamsReadable,
                                      DefaultParamsWritable):
     """
-    EnsembleTreeExplainTransformer Custom Scala / Python Wrapper Test
+    EnsembleTreeExplainTransformer Custom Scala / Python Wrapper
     """
 
     _classpath = 'com.clarifyhealth.prediction.explainer.EnsembleTreeExplainTransformer'
