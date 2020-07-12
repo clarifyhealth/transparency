@@ -1,10 +1,15 @@
 import numpy as np
 
 class EnsembleTreeExplainTransformer:
+    """
+    Prediction explainer for ensemble trees in Scikit-Learn
+    """
+
     def __init__(self, estimator):
         self.estimator = estimator
         self.feature_importance_ranks = np.argsort(estimator.feature_importances_)[::-1]
         self.feature_count = len(self.feature_importance_ranks)
+
     def _path_generator(self, X):
         nf = self.feature_count
         tree_paths = []
@@ -15,6 +20,7 @@ class EnsembleTreeExplainTransformer:
                 tree_paths.append(tree_paths[-1][:id] + [row[id]] + tree_paths[-1][id + 1:])
         tree_paths = np.array(tree_paths)
         return tree_paths
+
     def predict(self, X):
         nf = self.feature_count
         tree_paths = self._path_generator(np.array(X))
@@ -32,5 +38,6 @@ class EnsembleTreeExplainTransformer:
         contributions = np.array(contributions)[:, np.argsort(self.feature_importance_ranks)]
         contrib_intercept = path_outcomes[0]
         return contributions, contrib_intercept
+
     def fit(self):
         return self

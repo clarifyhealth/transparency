@@ -6,7 +6,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score as r2
 from transparency.python.explainer.tree import EnsembleTreeExplainTransformer
 
+
 def test_python_explainer():
+
     # loading the diabetes dataset
     columns = 'age sex bmi map tc ldl hdl tch ltg glu'.split()
     diabetes = load_diabetes()
@@ -22,17 +24,15 @@ def test_python_explainer():
 
     # regression evaluation: r2 score
     r2_eval = r2(y_test, y_pred)
-    print(r2_eval)
+    print('r2 of the fitted model is:', r2_eval)
 
     # prediction explanation generation
     expl = EnsembleTreeExplainTransformer(rf_model)
     contributions, contrib_intercept = expl.predict(X_test)
 
     average_contribs = zip(columns, np.mean(contributions, axis=0))
-    print(list(average_contribs))
+    print('Average feature contributions: \n', list(average_contribs))
 
-    assert (((np.sum(contributions, axis=1) + contrib_intercept) - y_pred < .01).all())
+    assert (((np.abs(np.sum(contributions, axis=1) + contrib_intercept - y_pred)) < .01).all())
 
     return
-
-
