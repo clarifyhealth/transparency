@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class EnsembleTreeExplainTransformer:
     """
     Prediction explainer for ensemble trees in Scikit-Learn
