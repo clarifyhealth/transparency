@@ -1,11 +1,15 @@
 from os import path, getcwd
 from setuptools import setup, find_packages
 
+this_directory = getcwd()
+
 package_name = 'transparency'
 
 try:
-    with open(path.join(getcwd(), 'VERSION')) as version_file:
+    with open(path.join(this_directory, 'VERSION'), encoding='utf-8') as version_file:
         version = version_file.read().strip()
+    with open(path.join(this_directory, 'README.md'), encoding='utf-8') as readme_file:
+        long_description = readme_file.read()
 except IOError:
     raise
 
@@ -22,9 +26,9 @@ test_requirements = parse_requirements('requirements-test.txt')
 setup(name=package_name,
       version=version,
       license='Apache License 2.0',
-      description='Project to explain models',
-      author='Iman Haji & Alvin Henrick',
-      author_email='iman.bio@gmail.com,share.code@aol.com',
+      description=long_description,
+      author='Iman Haji, Alvin Henrick',
+      author_email='iman.bio@gmail.com, share.code@aol.com',
       url='https://github.com/imanbio/transparency',
       packages=find_packages(exclude=['tests']),
       install_requires=requirements,
