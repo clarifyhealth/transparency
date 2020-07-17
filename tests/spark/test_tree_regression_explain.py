@@ -5,7 +5,7 @@ import pytest
 from pandas._testing import assert_frame_equal
 from pyspark.ml import Pipeline, PipelineModel
 from pyspark.sql import SparkSession, DataFrame
-from testutil.common import get_pipeline_stages, get_feature_importance, get_explain_stages
+from testutil.common import get_ensemble_pipeline_stages, get_feature_importance, get_ensemble_explain_stages
 
 
 @pytest.mark.parametrize("ensemble_type", ["dct", "gbt", "rf"])
@@ -31,7 +31,7 @@ def test_explain_regressor(spark_session: SparkSession, ensemble_type: str):
     categorical_columns = []
     continuous_columns = [x for x in boston_df.columns if x not in ['id', label_column]]
 
-    stages = get_pipeline_stages(categorical_columns, continuous_columns, label_column, ensemble_type)
+    stages = get_ensemble_pipeline_stages(categorical_columns, continuous_columns, label_column, ensemble_type)
 
     pipeline = Pipeline(stages=stages)
 
@@ -51,8 +51,8 @@ def test_explain_regressor(spark_session: SparkSession, ensemble_type: str):
 
     features_importance_df.show(truncate=False)
 
-    explain_stages = get_explain_stages(predictions_view, features_importance_view, label_column, rf_model_path,
-                                        ensemble_type)
+    explain_stages = get_ensemble_explain_stages(predictions_view, features_importance_view, label_column, rf_model_path,
+                                                 ensemble_type)
 
     explain_pipeline = Pipeline(stages=explain_stages)
 

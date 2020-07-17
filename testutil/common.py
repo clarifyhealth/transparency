@@ -13,8 +13,9 @@ from transparency.spark.ohe.decoder import OneHotDecoder
 from transparency.spark.prediction.explainer.tree import EnsembleTreeExplainTransformer
 
 
-def get_pipeline_stages(categorical_columns, continuous_columns, label_column, ensemble_type, classification=False
-                        ) -> List:
+def get_ensemble_pipeline_stages(categorical_columns, continuous_columns, label_column, ensemble_type,
+                                 classification=False
+                                 ) -> List:
     encoders = []
     for c in categorical_columns:
         indexer = StringIndexer(inputCol=c, outputCol=f"{c}_IDX")
@@ -81,8 +82,8 @@ def get_feature_importance(spark_session: SparkSession, model: Model, prediction
     return feature_importance_df
 
 
-def get_explain_stages(predictions_view: str, features_importance_view: str, label_column: str,
-                       rf_model_path: str, ensemble_type: str, classification=False) -> List:
+def get_ensemble_explain_stages(predictions_view: str, features_importance_view: str, label_column: str,
+                                rf_model_path: str, ensemble_type: str, classification=False) -> List:
     stages = [
         OneHotDecoder(oheSuffix="_OHE", idxSuffix="_IDX", unknownSuffix="Unknown"),
         SQLTransformer(statement=f"CREATE OR REPLACE TEMPORARY VIEW {predictions_view} AS SELECT * from __THIS__"),
