@@ -12,7 +12,7 @@ class GLMExplainTransformer(JavaTransformer, DefaultParamsReadable,
     GLMExplainTransformer Custom Scala / Python Wrapper
     """
 
-    _classpath = 'com.clarify.prediction.explainer.GLMExplainTransformer'
+    _classpath = 'com.clarifyhealth.prediction.explainer.GLMExplainTransformer'
 
     predictionView = Param(Params._dummy(), "predictionView", "predictionView",
                            typeConverter=TypeConverters.toString)
