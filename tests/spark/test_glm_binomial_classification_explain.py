@@ -9,9 +9,9 @@ from pyspark.sql import SparkSession, DataFrame
 from testutil.common import get_glm_pipeline_stages, get_feature_coefficients, get_glm_explain_stages
 
 
-@pytest.mark.parametrize("family", ["tweedie"])
+@pytest.mark.parametrize("family", ["binomial"])
 @pytest.mark.parametrize("link", ["logit"])
-def test_explain_regressor(spark_session: SparkSession, family: str, link: str):
+def test_explain_classification(spark_session: SparkSession, family: str, link: str):
     data_dir = Path(__file__).parent.parent.joinpath('data')
 
     prima_indian_diabetes_csv: Path = data_dir / 'classification' / 'dataset_prima_indian_diabetes.csv'
