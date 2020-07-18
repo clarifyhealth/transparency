@@ -9,7 +9,7 @@ from pyspark.sql import SparkSession, DataFrame
 from testutil.common import get_glm_pipeline_stages, get_feature_coefficients, get_glm_explain_stages
 
 
-@pytest.mark.parametrize("variance_power", [0, 1, 1.1, 1.2, 2])
+@pytest.mark.parametrize("variance_power", [0.0, 1.0, 1.1, 1.2, 2.0])
 def test_explain_regressor(spark_session: SparkSession, variance_power: float):
     data_dir = Path(__file__).parent.parent.joinpath('data')
 
