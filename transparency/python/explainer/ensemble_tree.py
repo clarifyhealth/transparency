@@ -1,7 +1,7 @@
 import numpy as np
+import pandas as pd
 
-
-class EnsembleTreeExplainTransformer:
+class EnsembleTreeExplainer:
     """
     Prediction explainer for ensemble trees in Scikit-Learn
     """
@@ -40,5 +40,20 @@ class EnsembleTreeExplainTransformer:
         contrib_intercept = path_outcomes[0]
         return contributions, contrib_intercept
 
-    def fit(self):
+
+class EnsembleTreeExplainerTransformer(EnsembleTreeExplainer):
+    """
+    Prediction explainer transformer for ensemble trees in Scikit-Learn
+    """
+
+    def __init__(self, estimator):
+        super().__init__(estimator)
+
+    def fit(self, *args, **kwargs):
         return self
+
+    def transform(self, df: pd.DataFrame) -> pd.DataFrame:
+        contributions, contrib_intercept = self.predict(df)
+        df['feature_contributions'] = [[f] for f in contributions]
+        df['intercept_contribution'] = contrib_intercept
+        return df
