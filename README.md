@@ -37,7 +37,7 @@ Model explanation generator:
     * `Importance`
 
 - The transformer append 3 main column to the prediction view 
-    * contrib_column ==> prediction_`label_column`_contrib : array of contributions
+    * contrib_column ==> prediction_`label_column`_contrib : *array of contributions*
     * contrib_column_sum ==>  `f"{contrib_column}_sum"` (intercept `already` added)
     * contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
@@ -71,6 +71,6 @@ Model explanation generator:
     * `Coefficient`
 
 - The transformer append 3 main column to the prediction view 
-    * contrib_column ==> prediction_`label_column`_contrib : array of contributions
+    * contrib_column ==> prediction_`label_column`_contrib : *array of contributions*
     * contrib_column_sum ==>  `f"{contrib_column}_sum"` (intercept `not` added)
     * contrib_column_intercept ==> `f"{contrib_column}_intercept"`
