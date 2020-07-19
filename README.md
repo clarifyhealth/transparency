@@ -9,6 +9,8 @@ Model explanation generator:
 
 
 # Usage : Ensemble Tree models
+- Scikit-Learn Transformer
+XXX XXX 
 - Pyspark Transformer
  ```python 
   from transparency.spark.prediction.explainer.tree import EnsembleTreeExplainTransformer
