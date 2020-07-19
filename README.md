@@ -1,5 +1,5 @@
 # transparency
-Model explanation generator for ensemble trees in:
+Model explanation generator:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
 
@@ -36,7 +36,7 @@ Model explanation generator for ensemble trees in:
     * `Original_Feature`
     * `Importance`
 
-- The transformer append 3 main column with prediction view 
+- The transformer append 3 main column to the prediction view 
     * contrib_column ==> prediction_`label_column`_contrib : array of contributions
     * contrib_column_sum ==>  `f"{contrib_column}_sum"` (intercept `already` added)
     * contrib_column_intercept ==> `f"{contrib_column}_intercept"`
@@ -70,7 +70,7 @@ Model explanation generator for ensemble trees in:
     * `Original_Feature`
     * `Coefficient`
 
-- The transformer append 3 main column with prediction view 
+- The transformer append 3 main column to the prediction view 
     * contrib_column ==> prediction_`label_column`_contrib : array of contributions
     * contrib_column_sum ==>  `f"{contrib_column}_sum"` (intercept `not` added)
     * contrib_column_intercept ==> `f"{contrib_column}_intercept"`
