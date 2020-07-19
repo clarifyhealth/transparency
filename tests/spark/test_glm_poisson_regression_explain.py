@@ -34,7 +34,7 @@ def test_explain_regressor(spark_session: SparkSession, family: str, link: str):
 
     contrib_column = f"prediction_{label_column}_contrib"
     contrib_column_sum = f"{contrib_column}_sum"
-    # contrib_column_intercept = f"{contrib_column}_intercept"
+    contrib_column_intercept = f"{contrib_column}_intercept"
 
     features_coefficient_view = f"features_coefficient_{label_column}_view"
     predictions_view = f"predictions_{label_column}_view"
@@ -77,6 +77,6 @@ def test_explain_regressor(spark_session: SparkSession, family: str, link: str):
 
     predictions = explain_df_cache.selectExpr(f"bround({prediction_column},5) as test_col").orderBy("id").toPandas()
     contributions = explain_df_cache.selectExpr(
-        f"bround({contrib_column_sum},5) as test_col").orderBy("id").toPandas()
+        f"bround({contrib_column_sum} + {contrib_column_intercept},5) as test_col").orderBy("id").toPandas()
 
     assert_frame_equal(predictions, contributions)
