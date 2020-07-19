@@ -24,22 +24,22 @@ Model explanation generator:
 - Path to load model `modelPath`
 
 - Supported `ensembleType`
-    * `dct`
-    * `gbt`
-    * `rf`
-    * `xgboost4j`
+    1. `dct`
+    2. `gbt`
+    3. `rf`
+    4. `xgboost4j`
 
 - The feature importance extracted from Apache Spark Model Meta Data.`featureImportanceView`
   Reference this python script : `testutil.common.get_feature_importance`
-    * `Feature_Index`
-    * `Feature`
-    * `Original_Feature`
-    * `Importance`
+    1. `Feature_Index`
+    2. `Feature`
+    3. `Original_Feature`
+    4. `Importance`
 
 - The transformer append 3 main column to the prediction view 
-    * contrib_column ==> `f"{prediction_{label_column}_contrib` : *array of contributions*
-    * contrib_column_sum ==>  `f"{contrib_column}_sum"`
-    * contrib_column_intercept ==> `f"{contrib_column}_intercept"`
+    1. contrib_column ==> `f"{prediction_{label_column}_contrib` : *array of contributions*
+    2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
+    3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
 # Usage : GLM models
 - Pyspark Transformer
@@ -56,21 +56,21 @@ Model explanation generator:
 
  ```
 -  Supported `linkFunctionType`
-    * `logLink`
-    * `powerHalfLink`
-    * `identityLink`
-    * `logitLink`
-    * `inverseLink`
-    * `otherPowerLink`
+    1. `logLink`
+    2. `powerHalfLink`
+    3. `identityLink`
+    4. `logitLink`
+    5. `inverseLink`
+    6. `otherPowerLink`
 
 - The feature coefficient extracted from Apache Spark Model Meta Data.`coefficientView`
   Reference this python script : `testutil.common.get_feature_coefficients`
-    * `Feature_Index`
-    * `Feature`
-    * `Original_Feature`
-    * `Coefficient`
+    1. `Feature_Index`
+    2. `Feature`
+    3. `Original_Feature`
+    4. `Coefficient`
 
 - The transformer append 3 main column to the prediction view 
-    * contrib_column ==> `f"{prediction_{label_column}_contrib` : *array of contributions*
-    * contrib_column_sum ==>  `f"{contrib_column}_sum"`
-    * contrib_column_intercept ==> `f"{contrib_column}_intercept"`
+    1. contrib_column ==> `f"{prediction_{label_column}_contrib` : *array of contributions*
+    2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
+    3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
