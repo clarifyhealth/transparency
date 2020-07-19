@@ -21,7 +21,7 @@ Model explanation generator:
                                  ensembleType=ensemble_type)
 
  ```
-- Path to to load model `modelPath`
+- Path to load model `modelPath`
 
 - Supported `ensembleType`
     * `dct`
