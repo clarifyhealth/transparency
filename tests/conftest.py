@@ -22,7 +22,7 @@ def spark_session(request):
         .master("local[2]") \
         .config("spark.sql.execution.arrow.enabled", "true") \
         .config("spark.jars",
-                lib_dir.joinpath('spark_model_explainer-assembly-0.1.jar').as_uri()) \
+                lib_dir.joinpath('spark_model_explainer-assembly-0.0.1.jar').as_uri()) \
         .enableHiveSupport().getOrCreate()
 
     request.addfinalizer(lambda: session.stop())
