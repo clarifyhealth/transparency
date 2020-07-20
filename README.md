@@ -4,7 +4,8 @@ Model explanation generator:
 - Pyspark (Scala and Pyspark)
 
 # Installation:
-- Add jar to spark classpath : https://github.com/clarifyhealth/spark_model_explainer
+- Add this jar to spark classpath : https://github.com/alvinhenrick/spark_model_explainer/releases/download/v.0.0.1/spark_model_explainer-assembly-0.0.1.jar
+- Maven repository release soon will be supported : https://github.com/clarifyhealth/spark_model_explainer
 - `pip install transparency`
 
 
