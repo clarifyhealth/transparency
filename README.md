@@ -76,3 +76,11 @@ XXX XXX
     1. contrib_column ==> `f"{prediction_{label_column}_contrib` : *array of contributions*
     2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
     3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
+
+## Authors
+* Iman Haji <https://www.linkedin.com/in/imanhaji>
+* Imran Qureshi <https://www.linkedin.com/in/imranq2/>
+* Alvin Henrick <https://www.linkedin.com/in/alvinhenrick/>
+
+## License
+Apache License Version 2.0
