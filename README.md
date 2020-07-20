@@ -78,7 +78,7 @@ XXX XXX
     2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
     3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
-## Example Notebooks
+## Pyspark Example Notebooks
 - [PySpark GLM Explain Example](examples/notebooks/spark/pyspark_glm_explain.ipynb)
 - [PySpark Random Forest Explain Example](examples/notebooks/spark/pyspark_random_forest_explain.ipynb)
 
