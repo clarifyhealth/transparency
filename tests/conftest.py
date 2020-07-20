@@ -21,6 +21,7 @@ def spark_session(request):
     session = SparkSession.builder.appName("pytest-pyspark") \
         .master("local[2]") \
         .config("spark.sql.execution.arrow.enabled", "true") \
+        .config("spark.jars.packages", "ml.dmlc:xgboost4j_2.11:1.0.0,ml.dmlc:xgboost4j-spark_2.11:1.0.0") \
         .config("spark.jars",
                 lib_dir.joinpath('spark_model_explainer-assembly-0.0.1.jar').as_uri()) \
         .enableHiveSupport().getOrCreate()
