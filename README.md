@@ -99,7 +99,8 @@ sum(contributions) + contrib_intercept for each row equals the prediction for th
     2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
     3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
-## Pyspark Example Notebooks
+## Example Notebooks
+- [Python (Scikit-Learn) Ensemble Tree Explain Example](examples/notebooks/python/python_ensemble_tree_explainer_samples.ipynb)
 - [PySpark GLM Explain Example](examples/notebooks/spark/pyspark_glm_explain.ipynb)
 - [PySpark Random Forest Explain Example](examples/notebooks/spark/pyspark_random_forest_explain.ipynb)
 
