@@ -5,7 +5,7 @@ Model explanation generator:
 
 # Installation:
 - `pip install transparency`
-Or:
+\nOr:
 - Add this jar to spark classpath : https://github.com/alvinhenrick/spark_model_explainer/releases/download/v.0.0.1/spark_model_explainer-assembly-0.0.1.jar
 - Maven repository release soon will be supported : https://github.com/clarifyhealth/spark_model_explainer
 
@@ -26,7 +26,6 @@ The sum of contributions + contrib_intercept for each row equals the prediction 
  ```python
 from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainerTransformer
 expl = EnsembleTreeExplainerTransformer(estimator)
-expl.fit()
 X_test_df = expl.transform(X_test_df)
  ```
 - estimator: the ensemble tree estimator that has been trained (e.g., random forest, gbm, or xgb)
