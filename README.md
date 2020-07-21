@@ -34,7 +34,7 @@ The resulting X_test_df will have 2 added columns: 'feature_contributions' and '
 - 'feature_contributions': column of nested arrays with feature contributions (1 array per row)
 - 'intercept_contribution': column of the same scaler value representing the contribution of the intercept
 sum(contributions) + contrib_intercept for each row equals the prediction for that row.
-## - Pyspark Transformer
+## - Pyspark Ensemble Tree Explainer Transformer
  ```python 
   from transparency.spark.prediction.explainer.tree import EnsembleTreeExplainTransformer
   EnsembleTreeExplainTransformer(predictionView=predictions_view, 
@@ -66,8 +66,7 @@ sum(contributions) + contrib_intercept for each row equals the prediction for th
     2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
     3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
-# Usage : GLM models
-- Pyspark Transformer
+## - Pyspark Generalized Linear Model (GLM) Explainer Transformer
  ```python 
    from transparency.spark.prediction.explainer.tree import GLMExplainTransformer
    GLMExplainTransformer(predictionView=predictions_view, 
