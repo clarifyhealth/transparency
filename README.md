@@ -10,8 +10,29 @@ Model explanation generator:
 
 
 # Usage : Ensemble Tree models
-## - Scikit-Learn Transformer
-XXX XXX 
+## - Scikit-Learn Ensemble Tree Explainer
+ ```python
+ from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainer
+ expl = EnsembleTreeExplainer(estimator)
+ contributions, contrib_intercept = expl.predict(X_test)
+ ```
+- estimator: the ensemble tree estimator that has been trained (e.g., random forest, gbm, or xgb)
+- X_test: a numpy array or a pandas dataframe with features as columns and samples as rows
+- contributions: array of feature contributions generated for each row of X_test
+- contrib_intercept: the contribution of intercept (the same for all rows)
+The sum of contributions + contrib_intercept for each row equals the prediction for that row.
+## - Scikit-Learn Ensemble Tree Explainer Transformer
+ ```python
+expl = EnsembleTreeExplainerTransformer(estimator)
+expl.fit()
+X_test_df = expl.transform(X_test_df)
+ ```
+- estimator: the ensemble tree estimator that has been trained (e.g., random forest, gbm, or xgb)
+- X_test: a Pandas dataframe with features as columns and samples as rows
+The resulting X_test_df will have 2 added columns: 'feature_contributions' and 'intercept_contribution':
+- 'feature_contributions': column of nested arrays with feature contributions (1 array per row)
+- 'intercept_contribution': column of the same scaler value representing the contribution of the intercept
+sum(contributions) + contrib_intercept for each row equals the prediction for that row.
 ## - Pyspark Transformer
  ```python 
   from transparency.spark.prediction.explainer.tree import EnsembleTreeExplainTransformer
