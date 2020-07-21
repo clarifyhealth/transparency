@@ -1,5 +1,5 @@
 # transparency
-Model explanation generator:
+Model explanation generator for:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
 
