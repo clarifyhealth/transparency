@@ -1,16 +1,16 @@
-# The "Transparency" Library
+## The "Transparency" Library
 Model explanation generator for ensemble trees and generalized linear models in:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
 
-# Installation:
+## Installation:
 - `pip install transparency`
 - Add this jar to spark classpath : https://github.com/alvinhenrick/spark_model_explainer/releases/download/v.0.0.1/spark_model_explainer-assembly-0.0.1.jar
 - Maven repository release soon will be supported : https://github.com/clarifyhealth/spark_model_explainer
 
 
-# Covered Transformers and Their Usage (full notebooks in the next section)
-## - Scikit-Learn Ensemble Tree Explainer Transformer
+## Transformer Set
+### - Scikit-Learn Ensemble Tree Explainer Transformer
  ```python
 from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainerTransformer
 expl = EnsembleTreeExplainerTransformer(estimator)
