@@ -9,7 +9,7 @@ Model explanation generator for:
 - Maven repository release soon will be supported : https://github.com/clarifyhealth/spark_model_explainer
 
 
-# Usage: Ensemble Tree models (link to example notebooks at the bottom of the page)
+# Covered Transformers and Their Usage (full notebooks in the next section)
 ## - Scikit-Learn Ensemble Tree Explainer Transformer
  ```python
 from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainerTransformer
