@@ -67,6 +67,6 @@ def test_python_explainer_transformer():
     assert ('intercept_contribution' in X_test2.columns)
     assert ((np.abs(
         np.array(X_test2['feature_contributions'].apply(lambda x: sum(x[0])) + X_test2['intercept_contribution']) \
-        - np.array(y_pred)) < .01).all())
+        - X_test2['prediction']) < .01).all())
 
     return

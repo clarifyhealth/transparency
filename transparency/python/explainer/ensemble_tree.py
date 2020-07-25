@@ -54,6 +54,10 @@ class EnsembleTreeExplainerTransformer(EnsembleTreeExplainer):
 
     def transform(self, df: pd.DataFrame) -> pd.DataFrame:
         contributions, contrib_intercept = self.predict(df)
+        prediction_col_name = 'prediction'
+        while prediction_col_name in df.columns:
+            prediction_col_name = prediction_col_name + '_'
+        df[prediction_col_name] = self.estimator.predict(df)
         df['feature_contributions'] = [[f] for f in contributions]
         df['intercept_contribution'] = contrib_intercept
         return df
