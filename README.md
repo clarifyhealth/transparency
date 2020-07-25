@@ -10,7 +10,7 @@ Model explanation generator for ensemble trees and generalized linear models in:
 
 
 ## Transformer Set
-#### - Scikit-Learn Ensemble Tree Explainer Transformer
+### - Scikit-Learn Ensemble Tree Explainer Transformer
  ```python
 from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainerTransformer
 expl = EnsembleTreeExplainerTransformer(estimator)
@@ -22,7 +22,7 @@ The resulting X_test_df will have 3 added columns: 'prediction', 'feature_contri
 - 'feature_contributions': column of nested arrays with feature contributions (1 array per row)
 - 'intercept_contribution': column of the same scaler value representing the contribution of the intercept
 sum(contributions) + contrib_intercept for each row equals the prediction for that row.
-#### - Scikit-Learn Generalized Linear Model (e.g., Logistic regression) Explainer Transformer
+### - Scikit-Learn Generalized Linear Model (e.g., Logistic regression) Explainer Transformer
  ```python
 from transparency.python.explainer.glm import glmExplainerTransformer
 expl = glmExplainerTransformer(estimator)
@@ -35,7 +35,7 @@ The resulting X_test_df will have 3 added columns: 'prediction', 'feature_contri
 - 'intercept_contribution': column of the same scaler value representing the contribution of the intercept
 sum(contributions) + contrib_intercept for each row equals the prediction for that row.
 - if output_proba is set to True, for the case of logistic regression, the output prediction and its corresponding explanation will be proba instead of the classification result
-#### - Pyspark Ensemble Tree Explainer Transformer
+### - Pyspark Ensemble Tree Explainer Transformer
  ```python 
   from transparency.spark.prediction.explainer.tree import EnsembleTreeExplainTransformer
   EnsembleTreeExplainTransformer(predictionView=predictions_view, 
@@ -67,7 +67,7 @@ sum(contributions) + contrib_intercept for each row equals the prediction for th
     2. contrib_column_sum ==>  `f"{contrib_column}_sum"`
     3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
-#### - Pyspark Generalized Linear Model (GLM) Explainer Transformer
+### - Pyspark Generalized Linear Model (GLM) Explainer Transformer
  ```python 
    from transparency.spark.prediction.explainer.tree import GLMExplainTransformer
    GLMExplainTransformer(predictionView=predictions_view, 
