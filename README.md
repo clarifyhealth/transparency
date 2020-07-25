@@ -11,17 +11,6 @@ Or:
 
 
 # Usage : Ensemble Tree models
-## - Scikit-Learn Ensemble Tree Explainer
- ```python
- from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainer
- expl = EnsembleTreeExplainer(estimator)
- contributions, contrib_intercept = expl.predict(X_test)
- ```
-- estimator: the ensemble tree estimator that has been trained (e.g., random forest, gbm, or xgb)
-- X_test: a numpy array or a pandas dataframe with features as columns and samples as rows
-- contributions: array of feature contributions generated for each row of X_test
-- contrib_intercept: the contribution of intercept (the same for all rows)
-The sum of contributions + contrib_intercept for each row equals the prediction for that row.
 ## - Scikit-Learn Ensemble Tree Explainer Transformer
  ```python
 from transparency.python.explainer.ensemble_tree import EnsembleTreeExplainerTransformer
@@ -30,10 +19,23 @@ X_test_df = expl.transform(X_test_df)
  ```
 - estimator: the ensemble tree estimator that has been trained (e.g., random forest, gbm, or xgb)
 - X_test: a Pandas dataframe with features as columns and samples as rows
-The resulting X_test_df will have 2 added columns: 'feature_contributions' and 'intercept_contribution':
+The resulting X_test_df will have 3 added columns: 'prediction', 'feature_contributions' and 'intercept_contribution':
 - 'feature_contributions': column of nested arrays with feature contributions (1 array per row)
 - 'intercept_contribution': column of the same scaler value representing the contribution of the intercept
 sum(contributions) + contrib_intercept for each row equals the prediction for that row.
+## - Scikit-Learn Generalized Linear Model (e.g., Logistic regression) Explainer Transformer
+ ```python
+from transparency.python.explainer.glm import glmExplainerTransformer
+expl = glmExplainerTransformer(estimator)
+X_test_df = expl.transform(X_test, output_proba=False)
+ ```
+- estimator: the glm estimator that has been trained (e.g., logistic regression)
+- X_test: a Pandas dataframe with features as columns and samples as rows
+The resulting X_test_df will have 3 added columns: 'prediction', 'feature_contributions' and 'intercept_contribution':
+- 'feature_contributions': column of nested arrays with feature contributions (1 array per row)
+- 'intercept_contribution': column of the same scaler value representing the contribution of the intercept
+sum(contributions) + contrib_intercept for each row equals the prediction for that row.
+- if output_proba is set to True, for the case of logistic regression, the output prediction and its corresponding explanation will be proba instead of the classification result
 ## - Pyspark Ensemble Tree Explainer Transformer
  ```python 
   from transparency.spark.prediction.explainer.tree import EnsembleTreeExplainTransformer
@@ -100,9 +102,14 @@ sum(contributions) + contrib_intercept for each row equals the prediction for th
     3. contrib_column_intercept ==> `f"{contrib_column}_intercept"`
 
 ## Example Notebooks
-- [Python (Scikit-Learn) Ensemble Tree Explain Example](examples/notebooks/python/python_ensemble_tree_explainer_samples.ipynb)
+- [Python (Scikit-Learn) Ensemble Tree Explain Example](examples/notebooks/python/python_ensemble_tree_explainer_samples.ipynb):
+examples/notebooks/python/python_ensemble_tree_explainer_samples.ipynb
+- [Python (Scikit-Learn) Generalized Linear Model Explain Example (https://github.com/imanbio/transparency/blob/master/examples/notebooks/python/python_glm_explainer_samples.ipynb)
+https://github.com/imanbio/transparency/blob/master/examples/notebooks/python/python_glm_explainer_samples.ipynb
 - [PySpark GLM Explain Example](examples/notebooks/spark/pyspark_glm_explain.ipynb)
+examples/notebooks/spark/pyspark_glm_explain.ipynb
 - [PySpark Random Forest Explain Example](examples/notebooks/spark/pyspark_random_forest_explain.ipynb)
+examples/notebooks/spark/pyspark_random_forest_explain.ipynb
 
 ## Authors
 * Iman Haji <https://www.linkedin.com/in/imanhaji>
