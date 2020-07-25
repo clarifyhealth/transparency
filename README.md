@@ -1,5 +1,5 @@
 # The "Transparency" Library
-Model explanation generator for:
+Model explanation generator for ensemble trees and generalized linear models in:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
 
