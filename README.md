@@ -26,7 +26,7 @@ sum(contributions) + contrib_intercept for each row equals the prediction for th
  ```python
 from transparency.python.explainer.glm import glmExplainerTransformer
 expl = glmExplainerTransformer(estimator)
-X_test_df = expl.transform(X_test, output_proba=False)
+X_test_df = expl.transform(X_test_df, output_proba=False)
  ```
 - estimator: the glm estimator that has been trained (e.g., logistic regression)
 - X_test: a Pandas dataframe with features as columns and samples as rows
