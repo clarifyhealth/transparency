@@ -104,11 +104,11 @@ sum(contributions) + contrib_intercept for each row equals the prediction for th
 ## Example Notebooks
 - [Python (Scikit-Learn) Ensemble Tree Explain Example](examples/notebooks/python/python_ensemble_tree_explainer_samples.ipynb):
 examples/notebooks/python/python_ensemble_tree_explainer_samples.ipynb
-- [Python (Scikit-Learn) Generalized Linear Model Explain Example](https://github.com/imanbio/transparency/blob/master/examples/notebooks/python/python_glm_explainer_samples.ipynb)
-https://github.com/imanbio/transparency/blob/master/examples/notebooks/python/python_glm_explainer_samples.ipynb
-- [PySpark GLM Explain Example](examples/notebooks/spark/pyspark_glm_explain.ipynb)
+- [Python (Scikit-Learn) Generalized Linear Model Explain Example](https://github.com/imanbio/transparency/blob/master/examples/notebooks/python/python_glm_explainer_samples.ipynb):
+examples/notebooks/python/python_glm_explainer_samples.ipynb
+- [PySpark GLM Explain Example](examples/notebooks/spark/pyspark_glm_explain.ipynb):
 examples/notebooks/spark/pyspark_glm_explain.ipynb
-- [PySpark Random Forest Explain Example](examples/notebooks/spark/pyspark_random_forest_explain.ipynb)
+- [PySpark Random Forest Explain Example](examples/notebooks/spark/pyspark_random_forest_explain.ipynb):
 examples/notebooks/spark/pyspark_random_forest_explain.ipynb
 
 ## Authors
