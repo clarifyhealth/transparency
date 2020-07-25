@@ -1,4 +1,4 @@
-# transparency
+# The "Transparency" Library
 Model explanation generator for:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
