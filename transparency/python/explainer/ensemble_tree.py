@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 
-class EnsembleTreeExplainer:
+
+class EnsembleTreeExplainer(object):
     """
     Prediction explainer for ensemble trees in Scikit-Learn
     """

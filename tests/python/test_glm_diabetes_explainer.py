@@ -6,7 +6,7 @@ from sklearn.datasets import load_diabetes, load_iris
 from sklearn import linear_model
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, f1_score
-from transparency.python.explainer.glm import glmExplainerTransformer
+from transparency.python.explainer.glm import GLMExplainerTransformer
 
 #%%
 
@@ -34,7 +34,7 @@ def test_glm_diabetes_explanation():
     clf.predict(np.zeros((1, X_train.shape[1])))[0]
 
     # prediction explanation generation
-    expl = glmExplainerTransformer(clf)
+    expl = GLMExplainerTransformer(clf)
     df = expl.transform(X_test)
 
     assert((np.abs(df['feature_contributions'].apply(lambda x: sum(x[0])) + \

@@ -24,8 +24,8 @@ The resulting X_test_df will have 3 added columns: 'prediction', 'feature_contri
 sum(contributions) + contrib_intercept for each row equals the prediction for that row.
 ### - Scikit-Learn Generalized Linear Model (e.g., Logistic regression) Explainer Transformer
  ```python
-from transparency.python.explainer.glm import glmExplainerTransformer
-expl = glmExplainerTransformer(estimator)
+from transparency.python.explainer.glm import GLMExplainerTransformer
+expl = GLMExplainerTransformer(estimator)
 X_test_df = expl.transform(X_test_df, output_proba=False)
  ```
 - estimator: the glm estimator that has been trained (e.g., logistic regression)
