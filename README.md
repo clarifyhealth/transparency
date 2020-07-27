@@ -8,7 +8,7 @@ Model explanation generator for ensemble trees and generalized linear models in:
 
 for Spark users:
 - Add this jar to spark classpath : https://github.com/alvinhenrick/spark_model_explainer/releases/download/v.0.0.1/spark_model_explainer-assembly-0.0.1.jar
-- Maven repository release soon will be supported : https://github.com/clarifyhealth/spark_model_explainer
+- Maven repository release will soon be supported : https://github.com/clarifyhealth/spark_model_explainer
 
 
 ## Transformer Set
