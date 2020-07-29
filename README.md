@@ -7,7 +7,7 @@ implemented for:
 - Scikit-Learn models
 - Apache Spark models
 
-The “transparency” algorithm runs in a fraction of the time required by #SHAP and #LIME and produces aggregable explanations for all predictions. We have successfully used this stable library over billions of EHR records in commercial applications.
+The Transparency algorithm runs in a fraction of the time required by #SHAP and #LIME and produces aggregable explanations for all predictions. We have successfully used this stable library over billions of EHR records in commercial applications.
 
 ## Installation:
 - `pip install transparency`
