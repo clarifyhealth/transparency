@@ -2,6 +2,12 @@
 Model explanation generator for ensemble trees and generalized linear models in:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
+Scalable and Fast, local (single level) and global (population level) prediction explanation of:
+-Ensemble trees (e.g., XGB, GBM, RF, and Decision tree)-Generalized linear models GLM (support for various families, link powers, and variance powers, e.g., logistic regression)implemented for:
+- Scikit-Learn models
+- Apache Spark models
+
+The “transparency” algorithm runs in a fraction of the time required by #SHAP and #LIME and produces aggregable explanations for all predictions. We have successfully used this stable library over billions of EHR records in commercial applications.
 
 ## Installation:
 - `pip install transparency`
