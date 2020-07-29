@@ -3,7 +3,9 @@ Model explanation generator for ensemble trees and generalized linear models in:
 - Python (Scikit-Learn)
 - Pyspark (Scala and Pyspark)
 Scalable and Fast, local (single level) and global (population level) prediction explanation of:
--Ensemble trees (e.g., XGB, GBM, RF, and Decision tree)-Generalized linear models GLM (support for various families, link powers, and variance powers, e.g., logistic regression)implemented for:
+-Ensemble trees (e.g., XGB, GBM, RF, and Decision tree)-Generalized linear models GLM (support for various families, link powers, and variance powers, e.g., logistic regression)
+
+implemented for:
 - Scikit-Learn models
 - Apache Spark models
 
