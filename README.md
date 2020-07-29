@@ -5,7 +5,7 @@ Scalable and Fast, local (single level) and global (population level) prediction
 
 implemented for models in:
 - Python (Scikit-Learn)
-- Pyspark (Scala and Pyspark)
+- Pyspark (Scala and Pyspark).
 
 The Transparency algorithm runs in a fraction of the time required by #SHAP and #LIME and produces aggregable explanations for all predictions. We have successfully used this stable library over billions of EHR records in commercial applications.
 
