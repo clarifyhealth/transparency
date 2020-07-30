@@ -1,3 +1,36 @@
+## Overview
+One of the main barriers to more wide-spread adoption of machine learning is the Blackbox problem: users cannot see why the model predicted a certain value.
+
+While simple linear models are relatively easy to explain, more advanced models like Generalized Linear Models, Random Forests and Boosted Trees are hard to explain especially in ways that the average person can understand. 
+
+At Clarify Health, we had to solve this problem to get clinicians and health leaders to accept the predictions of our models. As I talked to other data scientists, I realized that this is a common problem.
+
+Hence we are open sourcing our toolkit to explain ML models.
+
+The Transparency project enables data scientists to explain ensemble trees (e.g., XGB, GBM, RF, and decision tree) and GLMs:
+
+1. The explanation (feature contribution) is in the units of the prediction (e.g., dollars, days, probability etc)
+
+2. Feature contributions add up to the predicted value so it is easy to see why a certain value was predicted
+
+3. Can explain the model for any arbitrary sub-population at run-time
+
+4. Works with Scikit-Learn and Apache Spark models
+
+5. Can explain models with 100M+ rows in just a few seconds
+
+6. Enables a what-if analysis to see what the prediction would become if you changed feature inputs
+
+
+
+Feel free to use it and contribute to it so we can increase the adoption of machine learning.
+
+
+Here's the video from our presentation at Spark+AI Summit 2020 (includes how this methodology compares to existing alternatives like LIME & SHAP):
+
+https://youtu.be/8vHVV_TH570
+
+
 ## The "Transparency" Library
 Scalable and Fast, local (single level) and global (population level) prediction explanation of:
 - Ensemble trees (e.g., XGB, GBM, RF, and Decision tree)
