@@ -25,7 +25,8 @@ The Transparency project enables data scientists to explain ensemble trees (e.g.
 
 Feel free to use it and contribute to it so we can increase the adoption of machine learning.
 
-
+## Screenshot
+![Alt text](/Prediction_explainer_v4.png?raw=true "Optional Title")
 
 ## The "Transparency" Library
 Scalable and Fast, local (single level) and global (population level) prediction explanation of:
