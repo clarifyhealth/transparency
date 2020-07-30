@@ -26,10 +26,6 @@ The Transparency project enables data scientists to explain ensemble trees (e.g.
 Feel free to use it and contribute to it so we can increase the adoption of machine learning.
 
 
-Here's the video from our presentation at Spark+AI Summit 2020 (includes how this methodology compares to existing alternatives like LIME & SHAP):
-
-https://youtu.be/8vHVV_TH570
-
 
 ## The "Transparency" Library
 Scalable and Fast, local (single level) and global (population level) prediction explanation of:
