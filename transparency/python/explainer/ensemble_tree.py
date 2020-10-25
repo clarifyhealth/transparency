@@ -16,8 +16,9 @@ class EnsembleTreeExplainer:
         tree_paths = []
         for row in X:
             nzid = np.nonzero(row)[0]
+            ordered_id = [i for i in self.feature_importance_ranks if i in nzid]
             tree_paths.append([0] * nf)
-            for id in nzid:
+            for id in ordered_id:
                 tree_paths.append(tree_paths[-1][:id] + [row[id]] + tree_paths[-1][id + 1:])
         tree_paths = np.array(tree_paths)
         return tree_paths
